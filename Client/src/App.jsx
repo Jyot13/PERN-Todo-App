@@ -1,8 +1,12 @@
-import { Fragment, useState } from "react";
 import "./App.css";
+import InputTodo from "./components/InputTodo";
 
 function App() {
-  return <Fragment></Fragment>;
+  return (
+    <>
+      <InputTodo />
+    </>
+  );
 }
 
 export default App;
