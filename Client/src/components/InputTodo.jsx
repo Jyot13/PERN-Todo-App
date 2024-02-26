@@ -20,11 +20,15 @@ const InputTodo = () => {
 
   return (
     <>
-      <h1 className="text-center mt-5">Pern Todo List</h1>
-      <form className="d-flex mt-5" onSubmit={onSubmitForm}>
+      <h1 className="text-center mt-5">Taskify - PERN Todo List</h1>
+      <form
+        className="d-flex mt-5 justify-content-center"
+        onSubmit={onSubmitForm}
+      >
         <input
           type="text"
           className="form-control"
+          style={{ width: "75%" }}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />

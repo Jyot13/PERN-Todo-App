@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import EditTodo from "./EditTodo";
 
 const ListTodos = () => {
   const [todos, setTodos] = useState([]);
@@ -31,38 +32,42 @@ const ListTodos = () => {
 
   return (
     <>
-      <table className="table mt-5 text-center">
-        <thead>
-          <tr>
-            <th>Description</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* <tr>
+      <div className="d-flex justify-content-center style={{ width: '50%' }}">
+        <table className="table mt-5 text-center ">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* <tr>
             <td>John</td>
             <td>Doe</td>
             <td>john@example.com</td>
           </tr> */}
-          {todos.map((todo) => (
-            <tr key={todo.todo_id}>
-              <td>{todo.description}</td>
-              <td>Edit</td>
-              <td>
-                <button
-                  className="btn btn-danger"
-                  onClick={() => {
-                    deleteTodo(todo.todo_id);
-                  }}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+            {todos.map((todo) => (
+              <tr key={todo.todo_id}>
+                <td>{todo.description}</td>
+                <td>
+                  <EditTodo todo={todo} />
+                </td>
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => {
+                      deleteTodo(todo.todo_id);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };
